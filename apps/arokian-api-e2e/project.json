@@ -1,0 +1,16 @@
+{
+  "name": "arokian-api-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["@workspace/arokian-api"],
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "apps/arokian-api-e2e/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -60,3 +60,27 @@ It will show tasks that you can run with Nx.
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
+
+
+# local development
+
+## frontend
+
+## start react-native app
+```
+yarn start @workspace/arokian   
+```
+
+## backend
+
+
+## build nestjs api app
+
+```
+npx nx build @workspace/arokian-api
+```
+## serve nestjs api app
+
+```
+npx nx serve @workspace/arokian-api
+```

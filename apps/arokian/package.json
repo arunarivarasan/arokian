@@ -1,5 +1,5 @@
 {
-  "name": "arokian",
+  "name": "@workspace/arokian",
   "version": "0.0.1",
   "private": true,
   "dependencies": {

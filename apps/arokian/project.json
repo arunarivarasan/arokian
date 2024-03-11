@@ -1,8 +1,16 @@
 {
-  "name": "arokian",
+  "name": "@workspace/arokian",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/arokian/src",
   "projectType": "application",
-  "targets": {},
+  "targets": {
+    "start": {
+      "executor": "@nx/expo:start",
+      "options": {
+        "port": 8081,
+        "web": true
+      }
+    }
+  },
   "tags": []
 }
