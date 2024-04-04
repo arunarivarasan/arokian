@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "nx": "nx",
     "start": "nx run-many --target=start --projects"
   },
   "private": true,
@@ -12,7 +13,10 @@
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
-    "axios": "^1.6.0",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.26",
+    "@react-navigation/stack": "^6.3.16",
+    "axios": "^1.6.7",
     "expo": "~50.0.3",
     "expo-constants": "^15.4.5",
     "expo-linking": "^6.2.2",
@@ -84,5 +88,10 @@
   },
   "nx": {
     "includedScripts": []
-  }
+  },
+  "engines": {
+    "node": "18.19.1",
+    "yarn": "4.1.1"
+  },
+  "packageManager": "yarn@4.1.1"
 }

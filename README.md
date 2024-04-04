@@ -64,6 +64,10 @@ It will show tasks that you can run with Nx.
 
 # local development
 
+## inital tools setup
+
+run ps scripts install tools/devtools/src
+
 ## frontend
 
 ## start react-native app
@@ -73,6 +77,24 @@ yarn start @workspace/arokian
 
 ## backend
 
+
+## create new module 
+go to specific app folder where you want to create module
+```
+yarn nx g @nx/nest:module products
+```
+
+## create new controller
+go to specific app folder where you want to create controller
+```
+yarn nx g @nx/nest:controller products
+```
+
+## create new service
+go to specific app folder where you want to create service
+```
+yarn nx g @nx/nest:service products
+```
 
 ## build nestjs api app
 

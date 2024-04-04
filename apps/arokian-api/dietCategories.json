@@ -1,0 +1,17 @@
+{
+  "organic": "Organic",
+  "glutenFree": "Gluten Free",
+  "dairyFree": "Dairy Free",
+  "sugarFree": "Sugar Free",
+  "nutFree": "Nut Free",
+  "vegan": "Vegan",
+  "vegetarian": "Vegetarian",
+  "paleo": "Paleo",
+  "whole30": "Whole30",
+  "keto": "Keto",
+  "raw": "Raw",
+  "soyFree": "Soy Free",
+  "kosher": "Kosher",
+  "halal": "Halal",
+  "peanutFree": "Peanut Free"
+}
