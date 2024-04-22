@@ -2,18 +2,23 @@
   "name": "@workspace/arokian",
   "version": "0.0.1",
   "private": true,
+  "main": "expo-router/entry",
   "dependencies": {
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
     "metro-config": "*",
     "react-native": "*",
     "expo": "*",
+    "nativewind": "*",
     "react-native-svg": "*",
     "react-native-web": "*",
     "@react-navigation/native-stack": "*"
   },
+  "devDependencies": {
+    "tailwindcss": "*"
+  },
   "scripts": {
-    "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/arokian && cp package-lock.json apps/arokian",
+    "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/arokian && cp yarn.lock apps/arokian",
     "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/arokian"
   }
 }

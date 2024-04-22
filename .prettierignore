@@ -2,3 +2,8 @@
 /dist
 /coverage
 /.nx/cache
+node_modules/
+.test-runs/
+.*ignore
+*.dat
+.vscode/

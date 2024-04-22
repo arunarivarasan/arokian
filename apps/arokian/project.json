@@ -1,15 +1,44 @@
 {
   "name": "@workspace/arokian",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/arokian/src",
+  "sourceRoot": "apps/arokian",
   "projectType": "application",
   "targets": {
     "start": {
       "executor": "@nx/expo:start",
+      "inputs": [{ "env": "EXPO_USE_METRO_WORKSPACE_ROOT" }],
       "options": {
         "port": 8081,
         "web": true
       }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx start nx-expo-router-repo"
+      }
+    },
+    "run-ios": {
+      "executor": "@nx/expo:run",
+      "dependsOn": ["ensure-symlink", "sync-deps"],
+      "options": {
+        "platform": "ios"
+      }
+    },
+    "run-android": {
+      "executor": "@nx/expo:run",
+      "dependsOn": ["ensure-symlink", "sync-deps"],
+      "options": {
+        "platform": "android"
+      }
+    },
+    "sync-deps": {
+      "executor": "@nx/expo:sync-deps",
+      "options": {}
+    },
+    "ensure-symlink": {
+      "executor": "@nx/expo:ensure-symlink",
+      "options": {}
     }
   },
   "tags": []
