@@ -4,6 +4,7 @@
   "private": true,
   "main": "expo-router/entry",
   "dependencies": {
+    "@config-plugins/detox": "*",
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
     "metro-config": "*",
@@ -12,13 +13,31 @@
     "nativewind": "*",
     "react-native-svg": "*",
     "react-native-web": "*",
-    "@react-navigation/native-stack": "*"
+    "react-native-screens": "*",
+    "realm": "*",
+    "@react-navigation/native-stack": "*",
+    "@react-navigation/native": "*",
+    "@realm/react": "*",
+    "react": "*",
+    "expo-router": "*",
+    "expo-dev-client": "*",
+    "react-native-safe-area-context": "*",
+    "expo-font": "*",
+    "jest-expo": "*",
+    "@expo/metro-config": "*",
+    "react-native-svg-transformer": "*",
+    "@nx/jest": "*",
+    "babel-jest": "*",
+    "@nx/expo": "*",
+    "@expo/metro-runtime": "*"
   },
   "devDependencies": {
     "tailwindcss": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/arokian && cp yarn.lock apps/arokian",
-    "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/arokian"
+    "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/arokian",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   }
 }

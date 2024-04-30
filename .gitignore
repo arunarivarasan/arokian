@@ -57,3 +57,7 @@ cache/
 
 
 apps/arokian-e2e/artifacts
+
+# prebuild
+android
+ios

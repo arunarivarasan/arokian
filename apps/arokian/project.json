@@ -27,10 +27,33 @@
     },
     "run-android": {
       "executor": "@nx/expo:run",
-      "dependsOn": ["ensure-symlink", "sync-deps"],
       "options": {
         "platform": "android"
       }
+    },
+    "build": {
+      "executor": "@nx/expo:build",
+      "options": {},
+      "configurations": {
+        "preview": {
+          "profile": "preview"
+        },
+        "development": {
+          "profile": "development"
+        },
+        "production": {
+          "profile": "production"
+        }
+      }
+    },
+    "prebuild": {
+      "executor": "@nx/expo:prebuild",
+      "options": {},
+      "dependsOn": ["sync-deps"]
+    },
+    "install": {
+      "executor": "@nx/expo:install",
+      "options": {}
     },
     "sync-deps": {
       "executor": "@nx/expo:sync-deps",

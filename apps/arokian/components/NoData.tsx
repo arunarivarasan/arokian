@@ -1,8 +1,7 @@
-import { router } from "expo-router";
-import { Image, Text, View } from "react-native";
-import Button from '../components/button';
-import images from "../constants/images";
-
+import { router } from 'expo-router'
+import { Image, Text, View } from 'react-native'
+import Button from '../components/button'
+import images from '../constants/images'
 
 const NoData = ({ title, subtitle }) => {
   return (
@@ -20,13 +19,13 @@ const NoData = ({ title, subtitle }) => {
 
       <Button
         title="Scan products"
-        handlePress={() => router.push("/scan")}
+        handlePress={() => router.push('/scan')}
         containerStyles="w-[300px] my-5"
         textStyles={null}
         isLoading={null}
       />
     </View>
-  );
-};
+  )
+}
 
-export default NoData;
+export default NoData
