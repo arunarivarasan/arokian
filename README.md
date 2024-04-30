@@ -49,6 +49,12 @@ It will show tasks that you can run with Nx.
 yarn add <npm package>
 ```
 
+## Add expo package
+
+```
+yarn expo add expo-camera
+```
+
 ### remove node package
 
 ```

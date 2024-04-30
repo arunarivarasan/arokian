@@ -29,7 +29,8 @@
     "@nx/jest": "*",
     "babel-jest": "*",
     "@nx/expo": "*",
-    "@expo/metro-runtime": "*"
+    "@expo/metro-runtime": "*",
+    "expo-camera": "*"
   },
   "devDependencies": {
     "tailwindcss": "*"
