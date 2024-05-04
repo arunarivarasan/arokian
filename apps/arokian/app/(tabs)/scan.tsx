@@ -1,43 +1,44 @@
-import { Camera, CameraType } from 'expo-camera'
-import { useState } from 'react'
-import { Button, Text, TouchableOpacity, View } from 'react-native'
+import { Camera, CameraView } from 'expo-camera/next'
+import React, { useEffect, useState } from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 const Scan = () => {
-  const [type, setType] = useState(CameraType.back)
-  const [permission, requestPermission] = Camera.useCameraPermissions()
+  const [hasPermission, setHasPermission] = useState(null)
+  const [scanned, setScanned] = useState(false)
 
-  if (!permission) {
-    // Camera permissions are still loading
-    return <View />
+  useEffect(() => {
+    const getCameraPermissions = async () => {
+      const { status } = await Camera.requestCameraPermissionsAsync()
+      setHasPermission(status === 'granted')
+    }
+
+    getCameraPermissions()
+  }, [])
+
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true)
+    alert(`Bar code with type ${type} and data ${data} has been scanned!`)
   }
 
-  if (!permission.granted) {
-    // Camera permissions are not granted yet
-    return (
-      <View className="flex flex-col justify-center">
-        <Text style={{ textAlign: 'center' }}>
-          We need your permission to show the camera
-        </Text>
-        <Button onPress={requestPermission} title="grant permission" />
-      </View>
-    )
+  if (hasPermission === null) {
+    return <Text>Requesting for camera permission</Text>
   }
-
-  function toggleCameraType() {
-    setType(current =>
-      current === CameraType.back ? CameraType.front : CameraType.back
-    )
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>
   }
 
   return (
-    <View className="flex justify-center">
-      <Camera className="flex-1" type={type}>
-        <View className="flex flex-row bg-transparent m-64">
-          <TouchableOpacity onPress={toggleCameraType}>
-            <Text>Flip Camera</Text>
-          </TouchableOpacity>
-        </View>
-      </Camera>
+    <View className="flex-1 flex-col justify-center">
+      <CameraView
+        onBarcodeScanned={scanned ? undefined : handleBarCodeScanned}
+        barcodeScannerSettings={{
+          barcodeTypes: ['upc_a', 'upc_e']
+        }}
+        style={StyleSheet.absoluteFillObject}
+      />
+      {scanned && (
+        <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
+      )}
     </View>
   )
 }

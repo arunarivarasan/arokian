@@ -33,7 +33,9 @@
     "expo-camera": "*"
   },
   "devDependencies": {
-    "tailwindcss": "*"
+    "tailwindcss": "*",
+    "@babel/plugin-proposal-decorator": "*",
+    "@realm/babel-plugin": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/arokian && cp yarn.lock apps/arokian",
