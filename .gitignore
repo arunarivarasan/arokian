@@ -43,7 +43,6 @@ Thumbs.db
 # Expo
 node_modules/
 .expo/
-.yarn/
 dist/
 npm-debug.*
 *.jks

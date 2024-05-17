@@ -5,7 +5,14 @@ module.exports = function (api) {
     plugins: [
       'nativewind/babel',
       '@realm/babel-plugin',
-      ['@babel/plugin-proposal-decorators', { legacy: true }]
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+      [
+        '@tamagui/babel-plugin',
+        {
+          components: ['tamagui'],
+          config: './tamagui.config.ts'
+        }
+      ]
     ]
   }
 }

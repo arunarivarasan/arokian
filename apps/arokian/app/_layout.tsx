@@ -1,7 +1,9 @@
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
+
 import RealmProvider from '../provider/realm'
+import TamaguiProvider from '../provider/tamagui'
 SplashScreen.preventAutoHideAsync()
 const RootLayout = () => {
   const [fontsLoaded, error] = useFonts({
@@ -29,14 +31,16 @@ const RootLayout = () => {
   }
 
   return (
-    <RealmProvider>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(product)" options={{ headerShown: false }} />
-      </Stack>
-    </RealmProvider>
+    <TamaguiProvider>
+      <RealmProvider>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+          <Stack.Screen name="(product)" options={{ headerShown: false }} />
+        </Stack>
+      </RealmProvider>
+    </TamaguiProvider>
   )
 }
 
