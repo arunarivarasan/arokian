@@ -1,3 +1,10 @@
 {
-  "singleQuote": true
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "quoteProps": "as-needed",
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "useTabs": false
 }
+

@@ -43,7 +43,6 @@ Thumbs.db
 # Expo
 node_modules/
 .expo/
-.yarn/
 dist/
 npm-debug.*
 *.jks
@@ -57,3 +56,7 @@ cache/
 
 
 apps/arokian-e2e/artifacts
+
+# prebuild
+android
+ios

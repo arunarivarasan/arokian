@@ -2,6 +2,7 @@
   "expo": {
     "name": "Arokian",
     "slug": "arokian",
+    "scheme": "arokian",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,13 +16,15 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dawn.arokian"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.dawn.arokian"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -31,8 +34,15 @@
       [
         "@config-plugins/detox",
         {
-          "skipProguard": false,
-          "subdomains": ["10.0.2.2", "localhost"]
+          "subdomains": "*"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
         }
       ]
     ]
