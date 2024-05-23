@@ -1,19 +1,26 @@
-
+import { useRouter } from 'expo-router'
 import React from 'react'
-import { FlatList, RefreshControl, StatusBar, View } from 'react-native'
+import { StatusBar } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { NoData, ProductListItems } from '../../components'
+import { Header, ProductList } from '../../components'
 const History = () => {
-  const [refreshing, setRefreshing] = React.useState(false)
+  const router = useRouter()
+  // const [refreshing, setRefreshing] = React.useState(false)
 
-  const onRefresh = async () => {
-    setRefreshing(true);
-    // new products rest call
-    setRefreshing(false);
+  // const onRefresh = async () => {
+  //   setRefreshing(true);
+  //   // new products rest call
+  //   setRefreshing(false);
+  // }
+
+  const navigateToProduct = (code: string) => {
+    router.push(`/(products)/${code}`)
   }
+
   return (
     <SafeAreaView className="bg-white h-full">
-    <FlatList
+      <Header title="Scan History" enableBackNavigation={false} />
+      {/* <FlatList
      data={[{id: 1}, {id:2}, {id:3}]}
      keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
@@ -29,9 +36,10 @@ const History = () => {
     refreshControl={
       <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
-    />
-    <StatusBar barStyle="dark-content" />
-  </SafeAreaView>
+    /> */}
+      <ProductList onHandlePress={(code: string) => navigateToProduct(code)} />
+      <StatusBar barStyle="dark-content" />
+    </SafeAreaView>
   )
 }
 

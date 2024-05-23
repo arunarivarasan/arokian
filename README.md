@@ -71,6 +71,14 @@ run ps scripts install tools/devtools/src
 
 https://docs.expo.dev/guides/local-app-development/#local-app-compilation
 
+# NX projects
+
+### add libs
+
+```
+yarn nx g @nx/node:lib shared-types
+```
+
 # Frontend
 
 ### Prebuild
