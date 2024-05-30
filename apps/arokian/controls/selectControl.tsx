@@ -3,7 +3,13 @@ import { useMemo, useState } from 'react'
 import type { FontSizeTokens, SelectProps } from 'tamagui'
 import { Adapt, Select, Sheet, Theme, YStack, getFontSize } from 'tamagui'
 import { LinearGradient } from 'tamagui/linear-gradient'
-const SelectControl = (props: SelectProps) => {
+
+interface SelectControlProps extends SelectProps {
+  name: string
+  items: { name: string }[]
+}
+
+const SelectControl = (props: SelectControlProps) => {
   const [val, setVal] = useState('apple')
 
   return (
@@ -72,11 +78,11 @@ const SelectControl = (props: SelectProps) => {
             minWidth={200}
           >
             <Select.Group>
-              <Select.Label>Fruits</Select.Label>
+              <Select.Label>{props.name}</Select.Label>
               {/* for longer lists memoizing these is useful */}
               {useMemo(
                 () =>
-                  items.map((item, i) => {
+                  props.items.map((item, i) => {
                     return (
                       <Select.Item
                         index={i}
@@ -90,7 +96,7 @@ const SelectControl = (props: SelectProps) => {
                       </Select.Item>
                     )
                   }),
-                [items]
+                [props.items]
               )}
             </Select.Group>
             {/* Native gets an extra icon */}
@@ -135,29 +141,4 @@ const SelectControl = (props: SelectProps) => {
     </Theme>
   )
 }
-
-const items = [
-  { name: 'Apple' },
-  { name: 'Pear' },
-  { name: 'Blackberry' },
-  { name: 'Peach' },
-  { name: 'Apricot' },
-  { name: 'Melon' },
-  { name: 'Honeydew' },
-  { name: 'Starfruit' },
-  { name: 'Blueberry' },
-  { name: 'Raspberry' },
-  { name: 'Strawberry' },
-  { name: 'Mango' },
-  { name: 'Pineapple' },
-  { name: 'Lime' },
-  { name: 'Lemon' },
-  { name: 'Coconut' },
-  { name: 'Guava' },
-  { name: 'Papaya' },
-  { name: 'Orange' },
-  { name: 'Grape' },
-  { name: 'Jackfruit' },
-  { name: 'Durian' }
-]
 export default SelectControl

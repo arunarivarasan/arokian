@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
   Button,
   Form,
@@ -9,6 +9,7 @@ import {
   XStack,
   YStack
 } from 'tamagui'
+import PRODUCT_CATEGORIES from '../constants/productCategory'
 import { SelectControl } from '../controls'
 
 const ProductForm = () => {
@@ -16,6 +17,9 @@ const ProductForm = () => {
     'off'
   )
 
+  const categoryList = useMemo(() => {
+    return Object.keys(PRODUCT_CATEGORIES).map(category => ({ name: category }))
+  }, [])
   useEffect(() => {
     if (status === 'submitting') {
       const timer = setTimeout(() => setStatus('off'), 2000)
@@ -61,7 +65,11 @@ const ProductForm = () => {
             <Label htmlFor="select-demo-1" flex={1} minWidth={80}>
               Category
             </Label>
-            <SelectControl id="select-demo-1" />
+            <SelectControl
+              id="select-demo-1"
+              name="Category"
+              items={categoryList}
+            />
           </XStack>
         </YStack>
 

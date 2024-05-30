@@ -2153,6 +2153,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dev-plugins/react-query@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@dev-plugins/react-query@npm:0.0.6"
+  dependencies:
+    flatted: "npm:^3.2.9"
+  peerDependencies:
+    "@tanstack/react-query": "*"
+    expo: "*"
+  checksum: 10c0/b5d8496d2f783ccfd53dd23e0304b5402de409e63de14e10eca591c5cab509f3bdfd6dd04038a8d0f6a3615d749af247f003eb4a20918f846b4cb6dd1802b906
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -7318,6 +7330,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/eslint-plugin-query@npm:^5.35.6":
+  version: 5.35.6
+  resolution: "@tanstack/eslint-plugin-query@npm:5.35.6"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^6.20.0"
+  peerDependencies:
+    eslint: ^8.0.0
+  checksum: 10c0/6a61d93a8864d18d502717d4166af57c18480149dc801a6384d9b445222ef5506c3b974281cad6a6905c100a27f500ccab23b50f3ad57097f5597596524b28e2
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@tanstack/query-core@npm:5.36.1"
+  checksum: 10c0/53ba44c9934c99035122e586ae21bdc10a9978054d555f9608241c20b931c357eb60364e9d17adb1f30501494427bd63c00684923c8d08f41d41c5f346922d47
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.37.1":
+  version: 5.37.1
+  resolution: "@tanstack/react-query@npm:5.37.1"
+  dependencies:
+    "@tanstack/query-core": "npm:5.36.1"
+  peerDependencies:
+    react: ^18.0.0
+  checksum: 10c0/f0b33ec31c68bdc10f4aea9c3288ca969d77c57c87da7c77d0965fb9f82b5cb9d658868769fdaa3d4dc3deffd12b80c7debaa99cb702c52f41040fb7091162f7
+  languageName: node
+  linkType: hard
+
 "@testing-library/jest-dom@npm:6.2.0":
   version: 6.2.0
   resolution: "@testing-library/jest-dom@npm:6.2.0"
@@ -7962,7 +8003,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:6.21.0, @typescript-eslint/utils@npm:^6.13.2":
+"@typescript-eslint/utils@npm:6.21.0, @typescript-eslint/utils@npm:^6.13.2, @typescript-eslint/utils@npm:^6.20.0":
   version: 6.21.0
   resolution: "@typescript-eslint/utils@npm:6.21.0"
   dependencies:
@@ -8421,6 +8462,7 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": "npm:^7.24.1"
     "@config-plugins/detox": "npm:~6.0.0"
+    "@dev-plugins/react-query": "npm:^0.0.6"
     "@expo/cli": "npm:~0.16.5"
     "@expo/metro-config": "npm:~0.17.3"
     "@expo/metro-runtime": "npm:~3.1.1"
@@ -8455,6 +8497,8 @@ __metadata:
     "@tamagui/react-native-media-driver": "npm:^1.98.0"
     "@tamagui/shorthands": "npm:^1.98.0"
     "@tamagui/themes": "npm:^1.98.0"
+    "@tanstack/eslint-plugin-query": "npm:^5.35.6"
+    "@tanstack/react-query": "npm:^5.37.1"
     "@testing-library/jest-dom": "npm:6.2.0"
     "@testing-library/jest-native": "npm:~5.4.3"
     "@testing-library/react-native": "npm:~12.4.2"
@@ -8463,7 +8507,7 @@ __metadata:
     "@types/react": "npm:~18.2.45"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.2"
     "@typescript-eslint/parser": "npm:^6.13.2"
-    axios: "npm:^1.6.7"
+    axios: "npm:^1.6.8"
     babel-jest: "npm:^29.4.1"
     babel-preset-expo: "npm:~10.0.0"
     detox: "npm:^20.16.0"
@@ -9236,7 +9280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.0, axios@npm:^1.6.7":
+"axios@npm:^1.6.0":
   version: 1.6.7
   resolution: "axios@npm:1.6.7"
   dependencies:
@@ -9244,6 +9288,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.6.8":
+  version: 1.6.8
+  resolution: "axios@npm:1.6.8"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/0f22da6f490335479a89878bc7d5a1419484fbb437b564a80c34888fc36759ae4f56ea28d55a191695e5ed327f0bad56e7ff60fb6770c14d1be6501505d47ab9
   languageName: node
   linkType: hard
 
@@ -13512,6 +13567,16 @@ __metadata:
     debug:
       optional: true
   checksum: 10c0/418d71688ceaf109dfd6f85f747a0c75de30afe43a294caa211def77f02ef19865b547dfb73fde82b751e1cc507c06c754120b848fe5a7400b0a669766df7615
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 10c0/9ff767f0d7be6aa6870c82ac79cf0368cd73e01bbc00e9eb1c2a16fbb198ec105e3c9b6628bb98e9f3ac66fe29a957b9645bcb9a490bb7aa0d35f908b6b85071
   languageName: node
   linkType: hard
 

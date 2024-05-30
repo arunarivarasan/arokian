@@ -2,6 +2,8 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 
+import { Theme } from 'tamagui'
+import QueryClientCustomProvider from '../provider/queryClient'
 import RealmProvider from '../provider/realm'
 import TamaguiProvider from '../provider/tamagui'
 SplashScreen.preventAutoHideAsync()
@@ -32,14 +34,38 @@ const RootLayout = () => {
 
   return (
     <TamaguiProvider>
-      <RealmProvider>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-          <Stack.Screen name="(product)" options={{ headerShown: false }} />
-        </Stack>
-      </RealmProvider>
+      <QueryClientCustomProvider>
+        <RealmProvider>
+          <Theme name="light">
+            <Stack
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#4CA7E4'
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold'
+                }
+              }}
+            >
+              <Stack.Screen name="index" options={{ headerShown: false }} />
+              <Stack.Screen
+                name="(tabs)"
+                options={{
+                  title: '',
+                  headerTitleAlign: 'center',
+                  headerShown: false
+                }}
+              />
+              <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+              <Stack.Screen
+                name="(products)"
+                options={{ title: 'Product', headerTitleAlign: 'center' }}
+              />
+            </Stack>
+          </Theme>
+        </RealmProvider>
+      </QueryClientCustomProvider>
     </TamaguiProvider>
   )
 }
