@@ -1,13 +1,14 @@
 import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
-import { Header, ProductForm } from '../../components'
+import { StatusBar } from 'react-native'
+import { ProductForm } from '../../components'
+import { Container } from '../../tamagui.config'
 const Account = () => {
   return (
-    <SafeAreaView className="bg-white h-full">
-      <Header title="Profile" enableBackNavigation={false} />
+    // <SafeAreaView className="bg-white h-full">
+    <Container>
       <ProductForm />
       <StatusBar barStyle="dark-content" />
-    </SafeAreaView>
+    </Container>
   )
 }
 

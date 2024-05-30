@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router'
 import React from 'react'
 import { StatusBar } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Header, ProductList } from '../../components'
+import { ProductList } from '../../components'
 const History = () => {
   const router = useRouter()
   // const [refreshing, setRefreshing] = React.useState(false)
@@ -19,7 +19,7 @@ const History = () => {
 
   return (
     <SafeAreaView className="bg-white h-full">
-      <Header title="Scan History" enableBackNavigation={false} />
+      {/* <Header title="Scan History" enableBackNavigation={false} /> */}
       {/* <FlatList
      data={[{id: 1}, {id:2}, {id:3}]}
      keyExtractor={(item) => item.id.toString()}

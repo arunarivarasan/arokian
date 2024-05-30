@@ -37,13 +37,30 @@ const RootLayout = () => {
       <QueryClientCustomProvider>
         <RealmProvider>
           <Theme name="light">
-            <Stack>
+            <Stack
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#4CA7E4'
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold'
+                }
+              }}
+            >
               <Stack.Screen name="index" options={{ headerShown: false }} />
-              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+              <Stack.Screen
+                name="(tabs)"
+                options={{
+                  title: '',
+                  headerTitleAlign: 'center',
+                  headerShown: false
+                }}
+              />
               <Stack.Screen name="(auth)" options={{ headerShown: false }} />
               <Stack.Screen
                 name="(products)"
-                options={{ headerShown: false }}
+                options={{ title: 'Product', headerTitleAlign: 'center' }}
               />
             </Stack>
           </Theme>

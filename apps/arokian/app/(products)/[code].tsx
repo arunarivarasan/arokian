@@ -23,11 +23,9 @@ const Product = () => {
     )
   }
 
-  console.log('Product', data)
-
   return (
     <Container>
-      <H4>{data}</H4>
+      <H4>{data.brand}</H4>
       <H4>{isFetching ? 'Updating...' : ''}</H4>
     </Container>
   )
