@@ -37,7 +37,10 @@ const History = () => {
       <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
     /> */}
-      <ProductList onHandlePress={(code: string) => navigateToProduct(code)} />
+      <ProductList
+        onHandlePress={(code: string) => navigateToProduct(code)}
+        imageSrc="https://images.openfoodfacts.org/images/products/890/106/302/9309/front_en.20.400.jpg"
+      />
       <StatusBar barStyle="dark-content" />
     </SafeAreaView>
   )

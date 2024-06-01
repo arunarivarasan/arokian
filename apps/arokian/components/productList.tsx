@@ -6,9 +6,10 @@ import ListItemControl from '../controls/listItemControl'
 
 interface ProductListProps {
   onHandlePress: (code: string) => void
+  imageSrc: string
 }
 
-const ProductList = ({ onHandlePress }: ProductListProps) => {
+const ProductList = ({ onHandlePress, imageSrc }: ProductListProps) => {
   // const router = useRouter()
   return (
     <Theme name="light">
@@ -23,7 +24,7 @@ const ProductList = ({ onHandlePress }: ProductListProps) => {
           <ListItemControl
             hoverTheme
             pressTheme
-            imageSrc="https://via.placeholder.com/50"
+            imageSrc={imageSrc ?? 'https://via.placeholder.com/50'}
             title="Parle-G"
             text="Britannia"
             subtitle="Poor"
