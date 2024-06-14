@@ -3,6 +3,7 @@ import React from 'react'
 import { StatusBar } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ProductList } from '../../components'
+import productList from '../../mock/productList'
 const History = () => {
   const router = useRouter()
   // const [refreshing, setRefreshing] = React.useState(false)
@@ -39,7 +40,7 @@ const History = () => {
     /> */}
       <ProductList
         onHandlePress={(code: string) => navigateToProduct(code)}
-        imageSrc="https://images.openfoodfacts.org/images/products/890/106/302/9309/front_en.20.400.jpg"
+        products={productList}
       />
       <StatusBar barStyle="dark-content" />
     </SafeAreaView>

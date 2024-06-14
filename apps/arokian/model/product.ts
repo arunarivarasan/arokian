@@ -1,17 +1,33 @@
 import { BSON, Realm } from 'realm'
 
-class Product extends Realm.Object<Product> {
+type Product = {
+  name: string
+  brand: string
+  categories: string[]
+  code: string
+  productImage: string
+  ingredientsImage: string
+  createdAt: Date
+  user_id: string
+  quality: string
+  description: string
+}
+
+class ProductLocal extends Realm.Object<Product> {
   _id: BSON.ObjectId = new BSON.ObjectId()
   name!: string
   brand!: string
-  category!: string
+  categories!: string[]
   code!: string
-  image!: string
+  productImage!: string
   ingredientsImage!: string
   createdAt: Date = new Date()
   user_id!: string
+  quality!: string
+  description = ''
 
   static primaryKey = '_id'
 }
 
-export default Product
+export { ProductLocal }
+export type { Product }

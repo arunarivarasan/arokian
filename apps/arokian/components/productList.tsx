@@ -3,13 +3,14 @@ import { ChevronRight } from '@tamagui/lucide-icons'
 import React from 'react'
 import { Separator, Theme, YGroup } from 'tamagui'
 import ListItemControl from '../controls/listItemControl'
+import { Product } from '../model'
 
 interface ProductListProps {
   onHandlePress: (code: string) => void
-  imageSrc: string
+  products: Product[]
 }
 
-const ProductList = ({ onHandlePress, imageSrc }: ProductListProps) => {
+const ProductList = ({ onHandlePress, products }: ProductListProps) => {
   // const router = useRouter()
   return (
     <Theme name="light">
@@ -20,31 +21,23 @@ const ProductList = ({ onHandlePress, imageSrc }: ProductListProps) => {
         size="$5"
         separator={<Separator />}
       >
-        <YGroup.Item>
-          <ListItemControl
-            hoverTheme
-            pressTheme
-            imageSrc={imageSrc ?? 'https://via.placeholder.com/50'}
-            title="Parle-G"
-            text="Britannia"
-            subtitle="Poor"
-            description="John is a software engineer with 5 years of experience in full-stack development."
-            iconAfter={ChevronRight}
-            onPress={() => onHandlePress('8901063029309')}
-          />
-        </YGroup.Item>
-        <YGroup.Item>
-          <ListItemControl
-            hoverTheme
-            pressTheme
-            imageSrc="https://via.placeholder.com/50"
-            title="Marie Gold"
-            text="Britannia"
-            subtitle="Average"
-            description="John is a software engineer with 5 years of experience in full-stack development."
-            iconAfter={ChevronRight}
-          />
-        </YGroup.Item>
+        {products.map((product, index) => (
+          <YGroup.Item key={index}>
+            <ListItemControl
+              hoverTheme
+              pressTheme
+              imageSrc={
+                product.productImage ?? 'https://via.placeholder.com/50'
+              }
+              title={product.name}
+              text={product.brand}
+              subtitle={product.quality}
+              description={product.description}
+              iconAfter={ChevronRight}
+              onPress={() => onHandlePress(product.code)}
+            />
+          </YGroup.Item>
+        ))}
       </YGroup>
     </Theme>
   )

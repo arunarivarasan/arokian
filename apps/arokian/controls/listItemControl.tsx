@@ -21,14 +21,14 @@ const ImageWrapper = styled(XStack, {
 const ListItemControl = ({ imageSrc, title, subtitle, text, ...props }) => {
   return (
     <ListItem {...props}>
-      {imageSrc && (
-        <ImageWrapper>
-          <Image
-            source={images.noImageFound}
-            style={{ width: 50, height: 50 }}
-          />
-        </ImageWrapper>
-      )}
+      <ImageWrapper>
+        <Image
+          source={{ uri: imageSrc ?? images.noImageFound }}
+          width={50}
+          height={50}
+          resizeMode="contain"
+        />
+      </ImageWrapper>
       <XStack flexDirection="column">
         {title && <ListItemTitle>{title}</ListItemTitle>}
         {text && <ListItemText>{text}</ListItemText>}

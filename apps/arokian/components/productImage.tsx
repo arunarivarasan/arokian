@@ -11,7 +11,7 @@ const ProductImage = ({ url }: ProductListProps) => {
       source={{
         uri: url,
         width: 200,
-        height: 300
+        height: 200
       }}
       resizeMode="contain"
     />

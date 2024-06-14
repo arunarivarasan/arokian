@@ -1,3 +1,3 @@
-import Product from './product'
+import { Product, ProductLocal } from './product'
 
-export { Product }
+export { Product, ProductLocal }
