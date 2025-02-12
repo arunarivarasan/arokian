@@ -1,7 +1,21 @@
 {
   "recommendations": [
     "nrwl.angular-console",
+    "firsttris.vscode-jest-runner",
+    "capaj.vscode-exports-autocomplete",
+    "dbaeumer.vscode-eslint",
+    "drknoxy.eslint-disable-snippets",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner"
+    "github.copilot",
+    "github.copilot-chat",
+    "kisstkondoros.vscode-codemetrics",
+    "ms-vscode.powershell",
+    "ms-vsliveshare.vsliveshare",
+    "paulmolluzzo.convert-css-in-js",
+    "rangav.vscode-thunder-client",
+    "steoates.autoimport",
+    "yzhang.markdown-all-in-one"
   ]
 }

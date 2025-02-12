@@ -1,20 +1,18 @@
-$nvmPackageName = "CoreyButler.NVMforWindows"
-$nvmPackageListing = winget list | Select-String $nvmPackageName
-
-if ([string]::IsNullOrEmpty($nvmPackageListing)) {
-    winget install $nvmPackageName
+# Ensure NVM is installed
+if (-not (Get-Command nvm -ErrorAction SilentlyContinue)) {
+    Write-Output "NVM is not installed. Please install NVM first."
+    exit 1
 }
 
-$packageJson = $(Get-Content ../../../package.json) | ConvertFrom-Json
-$versionDesired = $packageJson.engines.node
-$response = nvm use $versionDesired;
+# Define the Node.js version to install
+$NodeVersion = "18.19.1"  # Change this to the version you want
 
-if ($response -match 'is not installed') {
-    if ($response -match '64-bit') {
-        nvm install $versionDesired x64
-    }
-    else {
-        nvm install $versionDesired x86
-    }
-    nvm use $versionDesired;
-}
+# Install Node.js using NVM
+Write-Output "Installing Node.js version $NodeVersion..."
+nvm install $NodeVersion
+
+# Set the installed version as the default
+Write-Output "Setting Node.js version $NodeVersion as the default..."
+nvm use $NodeVersion
+
+Write-Output "Node.js $NodeVersion installation completed successfully!"
